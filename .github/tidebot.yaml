@@ -1,0 +1,23 @@
+# Explicit default for repositories without a narrower Tidebot policy.
+plugins:
+  size: true
+  area: false
+  commands: true
+  tide: true
+  intake: true
+  stale: false
+  dependabot: false
+  autoApprove: false
+  plan: false
+  pipeline: false
+
+tide:
+  mergeMethod: squash
+  requiredLabels: [lgtm, approved]
+  blockedLabels: [hold]
+  requiredContexts: []
+  autoRebaseWhenBehind: true
+
+commands:
+  trustedAssociations: [MEMBER, OWNER, COLLABORATOR]
+  updateBranchMethod: merge
